@@ -26,5 +26,5 @@ int show_prompt(char **command)
 				free(*command);
 				return (0);
 		}
-		return(1);
+		return (1);
 }

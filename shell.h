@@ -11,5 +11,6 @@
 #include <stdlib.h>
 
 int show_prompt(char **command);
+char **args_setter(char *command);
 
 #endif
