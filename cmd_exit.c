@@ -1,5 +1,4 @@
-#include "shell.h"
-
+#include "main.h"
 /**
  * cmd_exit - Takes in the command and argv arguments
  * @command: Command passed into the function
@@ -21,4 +20,3 @@ void cmd_exit(char *command, char **argv)
 		exit(status);
 	}
 }
-
