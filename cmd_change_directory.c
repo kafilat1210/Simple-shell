@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * cd_home - takes in a pointer of char argv
+ * cd_home - takes in a pointer to a pointer of char argv
  * @argv: array of vectors
  * Return: This function doesn't return
 */
@@ -14,22 +14,22 @@ void cd_home(char **argv)
 	if (home_dir != NULL)
 	{
 		change_directory(home_dir);
-		for(i = 0; argv[i] != NULL; i++)
+		for (i = 0; argv[i] != NULL; i++)
 			free(argv[i]);
-		free (argv);
+		free(argv);
 	}
 }
 
 /**
  * cmd_change_directory - This function takes in pointer to a pointer argv
  * @argv: Another array of vectors
- * Return: Return an int value
+ * Return: Returns an int value
  */
 int cmd_change_directory(char **argv)
 {
 	int i;
 
-	if (_str_cmp()argv[0], "cd") ==0)
+	if (_str_cmp(argv[0], "cd") == 0)
 	{
 		if (argv[1] == NULL || _str_cmp(argv[1], "~") == 0)
 		{
@@ -51,7 +51,7 @@ int cmd_change_directory(char **argv)
 		}
 		else
 		{
-			change directory(argv[1]);
+			change_directory(argv[1]);
 			for (i = 0; argv[i] != NULL; i++)
 				free(argv[1]);
 			free(argv);
