@@ -1,14 +1,14 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * execmd - Takes in  pointer to a pointer argv
+ * execmd - Takes in a pointer to a pointer argv
  * @prog_name: Name of the program
  * @argv: An array of vectors
  * Return: Nothing
  */
-void execmd(char *prog_name, char **argv)#
+void execmd(char *prog_name, char **argv)
 {
-	string command = NULL, actual_command = NULL;
+	string command = NULL, actual_command =  NULL;
 	pid_t child_pid;
 
 	if (argv)
@@ -24,7 +24,7 @@ void execmd(char *prog_name, char **argv)#
 				printf("%s: 1: %s: not found", prog_name, command);
 				exit(EXIT_FAILURE);
 			}
-				perror(prog_name);
+			perror(prog_name);
 		}
 		else
 		{
