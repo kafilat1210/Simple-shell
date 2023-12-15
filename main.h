@@ -23,6 +23,8 @@ int printString(char *str);
 void execmd(char *prog_name, char **argv);
 char *get_location(char *command);
 string get_location_new(string command);
+int cmd_env(char **argv);
+void print_environment(void);
 
 /* SIZE_t_getline(char **lineptr, ize_t *n, intfd);*/
 char *tokenize(char *str, const char *delim);

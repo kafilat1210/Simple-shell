@@ -5,44 +5,43 @@
  * @argv: Argument vector
  *Return: integer
  */
+#include "main.h"
+
 int main(int argc, char **argv)
 {
-	char *command = NULL;
-	char *prog_name = argv[0];
+	string command = NULL, prog_name = NULL;
 	int i;
+
 	(void)argc;
+	prog_name = argv[0];
 
 	while (TRUE)
 	{
 		if (!prompt(&command))
 			continue;
 		argv = set_args(command);
-
 		if (argv)
 		{
-			if (_str_cmp(argv[0], "env") == 0)
-			{
-				print_environment();
-				for (i = 0; argv[i] != NULL; i++)
-					free(argv[i]);
-				free(argv);
-				continue;
-			}
 			if (cmd_set_unset_env(argv))
 				continue;
 			if (cmd_change_directory(argv))
 				continue;
+			if (cmd_env(argv))
+				continue;
 			execmd(prog_name, argv);
-
 			if (argv)
 			{
 				for (i = 0; argv[i] != NULL; i++)
 				{
 					if (argv[i])
+					{
 						free(argv[i]);
+					}
+					continue;
 				}
+
+				free(argv);
 			}
-			free(argv);
 		}
 	}
 	free(command);
