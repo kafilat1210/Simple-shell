@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * prompt -
- * @command: 
- * Return:
+ * prompt - function displays prompt
+ * @command: cmd to display on the cli
+ * Return: int
  */
 
 int prompt(char **command)
