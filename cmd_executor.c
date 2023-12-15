@@ -39,7 +39,7 @@ void execmd(char *prog_name, char **argv)
 			}
 			else
 				perror("fork error");
-			free(actual_command);
+		/*	free(actual_command);*/
 		}
 	}
 }
