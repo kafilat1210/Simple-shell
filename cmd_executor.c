@@ -44,7 +44,6 @@ int execmd(char *prog_name, char **argv)
 				perror("fork error");
 				return (1);
 			}
-			free(actual_command);
 			return (WEXITSTATUS(status));
 		}
 	}
