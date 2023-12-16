@@ -24,6 +24,7 @@ void execmd(char *prog_name, char **argv);
 char *get_location(char *command);
 string get_location_new(string command);
 int cmd_env(char **argv);
+char **split_commands(char *input);
 void print_environment(void);
 
 /* SIZE_t_getline(char **lineptr, ize_t *n, intfd);*/

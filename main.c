@@ -5,8 +5,6 @@
  * @argv: Argument vector
  *Return: integer
  */
-#include "main.h"
-
 int main(int argc, char **argv)
 {
 	string command = NULL, prog_name = NULL;
@@ -26,8 +24,6 @@ int main(int argc, char **argv)
 				continue;
 			if (cmd_change_directory(argv))
 				continue;
-			if (cmd_env(argv))
-				continue;
 			execmd(prog_name, argv);
 			if (argv)
 			{
@@ -39,7 +35,6 @@ int main(int argc, char **argv)
 					}
 					continue;
 				}
-
 				free(argv);
 			}
 		}
