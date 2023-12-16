@@ -40,6 +40,5 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-	free(command);
 	return (0);
 }
