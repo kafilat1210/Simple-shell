@@ -6,10 +6,11 @@
  * @argv: An array of vectors
  * Return: Nothing
  */
-void execmd(char *prog_name, char **argv)
+int execmd(char *prog_name, char **argv)
 {
 	string command = NULL, actual_command =  NULL;
 	pid_t child_pid;
+	int status;
 
 	if (argv)
 	{
@@ -25,6 +26,7 @@ void execmd(char *prog_name, char **argv)
 				exit(EXIT_FAILURE);
 			}
 			perror(prog_name);
+			return (1);
 		}
 		else
 		{
@@ -35,11 +37,15 @@ void execmd(char *prog_name, char **argv)
 			}
 			else if (child_pid > 0)
 			{
-				wait(NULL);
+				wait(&status);
 			}
 			else
+			{
 				perror("fork error");
-		/*	free(actual_command);*/
+				return (1);
+			}
+			return (WEXITSTATUS(status));
 		}
 	}
+	return (0);
 }

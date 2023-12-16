@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
 	string command = NULL, prog_name = NULL;
-	int i;
+	int i, status;
 
 	(void)argc;
 	prog_name = argv[0];
@@ -24,7 +24,9 @@ int main(int argc, char **argv)
 				continue;
 			if (cmd_change_directory(argv))
 				continue;
-			execmd(prog_name, argv);
+			status = execmd(prog_name, argv);
+			if (status != 0)
+				continue;
 			if (argv)
 			{
 				for (i = 0; argv[i] != NULL; i++)
@@ -33,7 +35,6 @@ int main(int argc, char **argv)
 					{
 						free(argv[i]);
 					}
-					continue;
 				}
 				free(argv);
 			}
