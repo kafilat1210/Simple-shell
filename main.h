@@ -19,6 +19,7 @@ typedef char *string;
 
 /* FUNCTION PROTOTYPES */
 int printChar(char c);
+void clear_mem(char **argv);
 int printString(char *str);
 int execmd(char *prog_name, char **argv);
 char *get_location(char *command);

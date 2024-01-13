@@ -8,7 +8,7 @@ void cmd_exit(char *command, char **argv)
 {
 	if (_str_cmp(command, "exit") == 0)
 	{
-		int status = 0;
+		int  status = 0;
 
 		if (argv[1] != NULL)
 		{
